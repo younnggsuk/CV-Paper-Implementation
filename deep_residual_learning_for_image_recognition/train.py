@@ -23,7 +23,7 @@ parser.add_argument("--save_dir", default="experiments", type=str,
 parser.add_argument("--tensorboard_dir", default="runs", type=str,
                     help="Directory containing tensorboard events")
 
-parser.add_argument("--num_layers", default="50", type=str,
+parser.add_argument("--num_layers", default=50, type=int,
                     help="Number of layers on ResNet")
 
 parser.add_argument("--epochs", default=100, type=int,
@@ -38,26 +38,29 @@ parser.add_argument("--learning_rate", default=0.1, type=float,
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    
+    # data directory path check
+    assert os.path.exists(args.data_dir), "Data directory not exist!"
+
+    # save directory path check
+    if not os.path.exists(args.save_dir):
+        os.mkdir("experiments")
+
+    # layer number check
+    assert args.num_layers in (18, 34, 50, 101, 152), "Invalid layer number!"
+
     torch.manual_seed(11)
     if torch.cuda.is_available():
         torch.cuda.manual_seed(11)
         device = torch.device("cuda")
     else:
         device = torch.device("cpu")
-
-    if not os.path.exists(args.data_dir):
-        assert("Data directory not exist!")
-
-    if not os.path.exists(args.save_dir):
-        os.mkdir("experiments")
     
     dataloaders = fetch_dataloader(["train", "val"],
                                    data_dir = args.data_dir,
                                    batch_size=int(args.batch_size),
                                    num_workers=2)
     train_loader, val_loader = dataloaders["train"], dataloaders["val"]
-    
+
     model = resnet(args.num_layers)
     model.fc = nn.Linear(model.fc.in_features, 2)
     model = model.to(device)

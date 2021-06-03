@@ -471,10 +471,8 @@ class ResNet152(nn.Module):
 
 
 def resnet(num_layers):
-    if num_layers == "18": model = ResNet18()
-    if num_layers == "34": model = ResNet34()
-    if num_layers == "50": model = ResNet50()
-    if num_layers == "101": model = ResNet101()
-    if num_layers == "152": model = ResNet152()
-
-    return model
+    if num_layers == 18: return ResNet18()
+    if num_layers == 34: return ResNet34()
+    if num_layers == 50: return ResNet50()
+    if num_layers == 101: return ResNet101()
+    if num_layers == 152: return ResNet152()
