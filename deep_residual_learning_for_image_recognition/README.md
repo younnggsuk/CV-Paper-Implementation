@@ -4,6 +4,10 @@ Pytorch로 [ResNet](https://arxiv.org/abs/1512.03385)을 구현한 코드입니�
 
 모델의 학습 및 검증에는 kaggle의 [Dogs vs. Cats dataset](https://www.kaggle.com/c/dogs-vs-cats/data)을 사용하였습니다.
 
+구현한 네트워크 구조는 다음과 같습니다.
+
+![architectures](./assets/architectures.png)
+
 ## Environments
 
 - Google Colab Pro
