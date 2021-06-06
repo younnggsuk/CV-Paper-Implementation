@@ -43,7 +43,7 @@ data/
         ...
 ```
 
-2. 다음의 명령어를 통해 ResNet-50 모델을 학습할 수 있습니다.
+2. ResNet-50 모델은 다음과 같이 학습할 수 있습니다.
 
 ```
 python train.py --data_dir data/ --save_dir experiments/ --num_layers 50 --epochs 100 --batch_size 32 --learning_rate 0.1
