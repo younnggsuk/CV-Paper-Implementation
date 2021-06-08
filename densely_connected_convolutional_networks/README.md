@@ -1,4 +1,4 @@
-# Deep Residual Learning for Image Recognition
+# Densely Connected Convolutional Networks
 
 Pytorch로 [DenseNet](https://arxiv.org/abs/1608.06993)을 구현한 코드입니다.
 
