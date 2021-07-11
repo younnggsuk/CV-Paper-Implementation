@@ -22,10 +22,11 @@ Pytorch로 [SENet](https://arxiv.org/abs/1709.01507)을 구현한 코드입니�
 ```
 pip install -r requirements.txt
 ```
-
-<!-- ## Results
+<!-- 
+## Results
 
 ![results](./assets/result.png)
+ -->
 
 ## Quick Start
 
@@ -43,10 +44,10 @@ data/
         ...
 ```
 
-2. DenseNet-169 모델은 다음과 같이 학습할 수 있습니다.
+2. SE-ResNet-50 모델은 다음과 같이 학습할 수 있습니다.
 
 ```
-python train.py --data_dir data/ --save_dir experiments/ --num_layers 169 --epochs 100 --batch_size 32 --learning_rate 0.1
+python train.py --data_dir data/ --save_dir experiments/ --num_layers 50 --epochs 100 --batch_size 32 --learning_rate 0.1
 ```
 
 학습된 모델은 `experiments/`에 저장되고, tensorboard events는 `runs/`에 저장됩니다.
@@ -55,4 +56,4 @@ python train.py --data_dir data/ --save_dir experiments/ --num_layers 169 --epoc
 
 ```
 tensorboard --logdir=runs/
-``` -->
+```
