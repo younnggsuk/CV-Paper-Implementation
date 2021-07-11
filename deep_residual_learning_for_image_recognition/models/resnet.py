@@ -81,28 +81,28 @@ class BottleneckBlock(nn.Module):
         super(BottleneckBlock, self).__init__()
         
         # stacked layers
-        if is_downsample:
-            self.conv1 = nn.Conv2d(in_channels,
-                                   out_channels // 4,
-                                   kernel_size=1,
-                                   stride=2,
-                                   padding=0,
-                                   bias=False)
-        else:
-            self.conv1 = nn.Conv2d(in_channels,
-                                   out_channels // 4,
-                                   kernel_size=1,
-                                   stride=1,
-                                   padding=0,
-                                   bias=False)
+        self.conv1 = nn.Conv2d(in_channels,
+                               out_channels // 4,
+                               kernel_size=1,
+                               stride=1,
+                               padding=0,
+                               bias=False)
         self.bn1 = nn.BatchNorm2d(out_channels // 4)
         self.relu = nn.ReLU()
-        self.conv2 = nn.Conv2d(out_channels // 4,
-                               out_channels // 4,
-                               kernel_size=3,
-                               stride=1,
-                               padding=1,
-                               bias=False)
+        if is_downsample:
+            self.conv2 = nn.Conv2d(out_channels // 4,
+                                   out_channels // 4,
+                                   kernel_size=3,
+                                   stride=2,
+                                   padding=1,
+                                   bias=False)
+        else:
+            self.conv2 = nn.Conv2d(out_channels // 4,
+                                   out_channels // 4,
+                                   kernel_size=3,
+                                   stride=1,
+                                   padding=1,
+                                   bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels // 4)
         self.conv3 = nn.Conv2d(out_channels // 4,
                                out_channels,
