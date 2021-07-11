@@ -6,7 +6,7 @@ Pytorch로 [SENet](https://arxiv.org/abs/1709.01507)을 구현한 코드입니�
 
 구현한 네트워크 모듈은 다음과 같으며, 이를 통해 SE-ResNet-50, SE-ResNet-101, SE-ResNet-152를 구현하였습니다.
 
-![architectures](./assets/module.png)
+<img src="./assets/module.png" alt="module" width="50%">
 
 ## Environments
 
