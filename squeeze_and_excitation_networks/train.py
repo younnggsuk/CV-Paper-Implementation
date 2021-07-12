@@ -70,9 +70,9 @@ if __name__ == "__main__":
     optimizer = SGD(model.parameters(),
                     lr=args.learning_rate,
                     momentum=0.9)
-    scheduler = lr_scheduler.StepLR(optimizer=optimizer,
-                                    step_size=30,
-                                    gamma=0.1)
+    scheduler = lr_scheduler.ReduceLROnPlateau(optimizer=optimizer,
+                                               factor=0.1,
+                                               patience=5)
     
     writer = SummaryWriter(os.path.join(args.tensorboard_dir, 
                                         f"se_resnet_{args.num_layers}"))
