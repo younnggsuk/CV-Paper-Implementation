@@ -32,7 +32,7 @@ parser.add_argument("--epochs", default=100, type=int,
 parser.add_argument("--batch_size", default=32, type=int,
                     help="Number of mini-batch size")
 
-parser.add_argument("--learning_rate", default=0.1, type=float,
+parser.add_argument("--learning_rate", default=0.6, type=float,
                     help="Initial learning rate")
 
 
@@ -69,12 +69,10 @@ if __name__ == "__main__":
     loss_fn = nn.CrossEntropyLoss()
     optimizer = SGD(model.parameters(),
                     lr=args.learning_rate,
-                    momentum=0.9,
-                    weight_decay=0.0001,
-                    nesterov=True)
-    scheduler = lr_scheduler.ReduceLROnPlateau(optimizer=optimizer,
-                                               factor=0.1,
-                                               patience=5)
+                    momentum=0.9)
+    scheduler = lr_scheduler.StepLR(optimizer=optimizer,
+                                    step_size=30,
+                                    gamma=0.1)
     
     writer = SummaryWriter(os.path.join(args.tensorboard_dir, 
                                         f"se_resnet_{args.num_layers}"))
