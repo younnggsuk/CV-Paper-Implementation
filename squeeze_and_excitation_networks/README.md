@@ -22,11 +22,11 @@ Pytorch로 [SENet](https://arxiv.org/abs/1709.01507)을 구현한 코드입니�
 ```
 pip install -r requirements.txt
 ```
-<!-- 
+
 ## Results
 
-![results](./assets/result.png)
- -->
+![results](./assets/results.png)
+
 
 ## Quick Start
 
