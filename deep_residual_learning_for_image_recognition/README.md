@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Results
 
-![results](./assets/result.png)
+![results](./assets/results.png)
 
 ## Quick Start
 
