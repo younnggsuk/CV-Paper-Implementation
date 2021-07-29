@@ -3,3 +3,6 @@
 
 # python cache
 __pycache__/
+
+# Desktop Services Store file
+.DS_Store
