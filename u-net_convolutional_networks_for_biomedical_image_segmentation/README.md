@@ -141,5 +141,5 @@ $ python main.py \
 2. tensorboard를 통해 IoU, Mean IoU, Pixel Accuracy, Mean Accuracy의 curve를 확인할 수 있습니다.
 
 ```
-tensorboard --logdir=runs/
+$ tensorboard --logdir=runs/
 ```
