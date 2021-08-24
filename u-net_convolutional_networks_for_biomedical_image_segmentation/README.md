@@ -86,7 +86,7 @@ u-net_convolutional_networks_for_biomedical_image_segmentation
 ```
 
 3. SBD Dataset으로 segmentation label mask 파일을 만들기 위해, [MMSegmentation repo](https://github.com/open-mmlab/mmsegmentation)를 참고하였습니다.  
-  mmsegmentation repository를 clone하고, [Prepare datasets - PascalVOC](https://github.com/open-mmlab/mmsegmentation/blob/2acd563231cf83ff0b9edad9a92ffe2f0d3dd9bb/docs/dataset_prepare.md#pascal-voc)의 설명을 따라 `voc_aug.py` 스크립트를 실행하면, 다음과 같이 label mask 파일이 있는 `SegmentationClassAug` 디렉토리와 augmentation된 train data 파일들의 목록이 담긴 `trainaug.txt` 파일이 생성됩니다. (`mmcv` 패키지가 없다면 설치해주어야합니다.)
+  mmsegmentation repository를 clone하고, [Prepare datasets - PascalVOC](https://github.com/open-mmlab/mmsegmentation/blob/2acd563231cf83ff0b9edad9a92ffe2f0d3dd9bb/docs/dataset_prepare.md#pascal-voc)의 설명을 따라 `voc_aug.py` 스크립트를 실행하면, 다음과 같이 label mask 파일이 있는 `SegmentationClassAug` 디렉토리와 augmentation된 train data 파일들의 목록이 담긴 `trainaug.txt` 파일이 생성됩니다. (`mmcv` 패키지가 없다면 `pip install mmcv`로 설치해주어야합니다.)
 
 ```shell
 $ git clone https://github.com/open-mmlab/mmsegmentation
