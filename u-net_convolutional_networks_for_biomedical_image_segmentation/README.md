@@ -7,7 +7,9 @@ Pytorch로 [U-Net](https://arxiv.org/abs/1505.04597)을 구현한 코드입니�
 구현한 네트워크 구조는 다음과 같습니다.  
 (논문과 달리 overlap-tile strategy 없이 입출력이 동일한 size로 출력되도록 하였고, Batch Normalization을 사용하였습니다.)
 
-<img src="./assets/architecture.png" alt="architecture" width="60%">
+<div align="center">
+  <img src="./assets/architecture.png" alt=architecture width="60%">
+</div>
 
 ## Environments
 
@@ -19,8 +21,8 @@ Pytorch로 [U-Net](https://arxiv.org/abs/1505.04597)을 구현한 코드입니�
 실험한 Colab 환경의 패키지들은 다음과 같이 설치할 수 있습니다.  
 (Colab 환경에서 export한 패키지 목록이므로, 되도록이면 코랩 환경에서 진행하시기를 추천드립니다.)
 
-```
-pip install -r requirements.txt
+```shell
+$ pip install -r requirements.txt
 ```
 
 ## Results
@@ -28,17 +30,17 @@ pip install -r requirements.txt
 학습한 결과는 다음과 같습니다. (약 50 epoch 이후부터 큰 성능의 개선이 없어서 78 epoch에서 학습 중단하였습니다.)
 
 <div align="center">
-  <img src="./assets/loss.png" alt=loss width="50%" style="border:1px solid black">
+  <img src="./assets/loss.png" alt=loss width="50%">
 </div>
 
 <div align="center">
-  <img src="./assets/mean_iou.png" alt=mean_iou width="48.3%" style="border:1px solid black">
-  <img src="./assets/mean_acc.png" alt=mean_acc width="49%" style="border-bottom:1px solid black; border-right:1px solid black; border-top:1px solid black">
+  <img src="./assets/mean_iou.png" alt=mean_iou width="48.3%">
+  <img src="./assets/mean_acc.png" alt=mean_acc width="49%">
 </div>
 
 <div align="center">
-  <img src="./assets/iou.png" alt=iou width="45%" style="border:1px solid black">
-  <img src="./assets/pixel_acc.png" alt=pixel_acc width="52.7%" style="border-bottom:1px solid black; border-right:1px solid black; border-top:1px solid black">
+  <img src="./assets/iou.png" alt=iou width="45%" >
+  <img src="./assets/pixel_acc.png" alt=pixel_acc width="52.7%" >
 </div>
 
 ## Quick Start
